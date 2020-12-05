@@ -1,6 +1,13 @@
 <?php
+include 'config/db.php';
 
-
+$is_reg = false;
+if(isset($_POST['submit_reg'])){
+    $name = $_POST['name'];
+    if($db->exec('INSERT INTO  user (name) VALUES ("'.$name.'")')){
+      $is_reg = true;
+    }
+}
 ?>
 
 <!doctype html>
@@ -11,7 +18,7 @@
     <meta name="description" content="">
     <meta name="generator" content="Jekyll v4.0.1">
     <link rel="shortcut icon" href="https://img.icons8.com/ios-filled/50/000000/todo-list.png" type="image/png">
-    <title>TODO</title>
+    <title>Регистрация</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
 
@@ -42,18 +49,27 @@
           <div class="inner">
             <h3 class="masthead-brand">Todo</h3>
             <nav class="nav nav-masthead justify-content-center">
-              <a class="nav-link active" href="#">Главная</a>
+              <a class="nav-link" href="index.php">Главная</a>
               <a class="nav-link" href="signin.php">Войти</a>
             </nav>
           </div>
         </header>
 
       <main role="main" class="inner cover">
-        <h1 class="cover-heading">Список дел</h1>
-        <p class="lead">Список дел – это набор из целей и задач для текущего выполнения. Это первый шаг к планированию и тайм менеджменту (управлению временем).</p>
-        <p class="lead">
-          <a href="signin.php" class="btn btn-lg btn-secondary">Мой список</a>
-        </p>
+        <h1 align="center">Регистрация</h1>
+      		<form method="POST" action="register.php" style="margin: 20px 10%;">
+
+            <?php if($is_reg){ $is_reg=false?>
+              <div class="alert alert-success" role="alert">
+                  Вы успешно зарегистрировались! <a href="signin.php" class="btn btn-primary btn-sm">Войти</a>
+              </div>
+            <?php } ?>
+
+      			<div class="form-group">
+      				<input type="text" class="form-control" id="exampleInputUsername"  placeholder="Ваше имя" name='name'>
+      			</div>
+      			<input type="submit" class="btn btn-primary btn-block" value="Создать пользователя" name="submit_reg">
+      		</form>
       </main>
 
       <footer class="mastfoot mt-auto">
