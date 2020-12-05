@@ -12,7 +12,7 @@ include 'config/db.php';
     <meta name="description" content="">
     <meta name="generator" content="Jekyll v4.0.1">
     <link rel="shortcut icon" href="https://img.icons8.com/ios-filled/50/000000/todo-list.png" type="image/png">
-    <title>TODO</title>
+    <title>To Do</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
 
@@ -41,7 +41,7 @@ include 'config/db.php';
       <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto">
           <div class="inner">
-            <h3 class="masthead-brand">Todo</h3>
+            <h3 class="masthead-brand">To do</h3>
             <nav class="nav nav-masthead justify-content-center">
               <a class="nav-link active" href="#">Главная</a>
               <a class="nav-link" href="signin.php">Войти</a>
