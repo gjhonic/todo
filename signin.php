@@ -1,12 +1,15 @@
 <?php
+session_start();
 include 'config/db.php';
 
 if(isset($_POST['submit_sign'])){
     $name = $_POST['name'];
-    $result = $db->query('SELECT * FROM user WHERE name="'.$name.'"');
+    $st = $db->prepare("SELECT * FROM user WHERE name=:name");
+    $st->execute(array('name' => $name));
+    $result = $st->fetchAll();
     if($result!=null){
-      echo "Мы вошли!";
-      die;
+      $_SESSION['user_id'] = $result[0]['id'];
+      header('Location: me.php ');
     }
 }
 ?>

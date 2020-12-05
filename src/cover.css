@@ -104,3 +104,31 @@ body {
 .mastfoot {
   color: rgba(255, 255, 255, .5);
 }
+
+.todo-list{
+  border: 1px solid #C8C2B1;
+  height: 350px;
+  margin: 20px 0;
+  border-radius: 15px;
+  background-color: #C8C2B1;
+  overflow-y: auto;
+}
+.title-active-list{
+  font-size: 25px;
+  border-bottom: 1px solid grey;
+}
+.title-complete-list{
+  font-size: 25px;
+  border-bottom: 1px solid grey;
+}
+.do-title{
+  border: 1px solid white;
+  background-color: white;
+  margin: 3px 10px;
+  padding: 3px 5px;
+  color: black;
+  border-radius: 5px;
+}
+.do-title p{
+  margin: 0 0 0 10px;
+}
