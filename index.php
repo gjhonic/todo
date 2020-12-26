@@ -1,10 +1,8 @@
 <?php
 session_start();
 include 'config/db.php';
-
 ?>
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
